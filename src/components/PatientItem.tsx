@@ -20,7 +20,7 @@ type Props = {
   setSelectedPatient: Dispatch<SetStateAction<Patient | undefined>>;
 };
 
-const AccordionItem = ({ data, setShowDialog, setSelectedPatient }: Props) => {
+const PatientItem = ({ data, setShowDialog, setSelectedPatient }: Props) => {
   const { createdAt, description, name, website } = data;
   const [expanded, setExpanded] = React.useState<string | false>(false);
 
@@ -71,4 +71,4 @@ const AccordionItem = ({ data, setShowDialog, setSelectedPatient }: Props) => {
   );
 };
 
-export default AccordionItem;
+export default PatientItem;

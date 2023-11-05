@@ -1,6 +1,7 @@
-import AccordionItem from "./AccordionItem";
+import PatientItem from "./PatientItem";
 import { Patient } from "../App";
 import { Dispatch, SetStateAction } from "react";
+import { Grid } from "@mui/material";
 
 type Props = {
   data: Patient[];
@@ -8,24 +9,19 @@ type Props = {
   setSelectedPatient: Dispatch<SetStateAction<Patient | undefined>>;
 };
 
-function Accordion({ data, setShowDialog, setSelectedPatient }: Props) {
+function PatientList({ data, setShowDialog, setSelectedPatient }: Props) {
   return (
-    <div
-      style={{
-        margin: "auto",
-        padding: "100px",
-      }}
-    >
+    <Grid item xs={11} sx={{ padding: "100px 0" }}>
       {data.map((item: Patient) => (
-        <AccordionItem
+        <PatientItem
           data={item}
           key={item.id}
           setShowDialog={setShowDialog}
           setSelectedPatient={setSelectedPatient}
         />
       ))}
-    </div>
+    </Grid>
   );
 }
 
-export default Accordion;
+export default PatientList;

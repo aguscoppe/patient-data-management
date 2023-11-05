@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
-import Accordion from "./components/Accordion";
+import PatientList from "./components/PatientList";
 import Header from "./components/Header";
 import PatientForm from "./components/PatientForm";
-import { Typography } from "@mui/material";
+import { Grid } from "@mui/material";
+import Loader from "./components/common/Loader/Loader";
 
 export type Patient = {
   avatar: string;
@@ -37,43 +38,57 @@ function App() {
 
   const handleDialog = () => setShowDialog((prev) => !prev);
 
+  if (!data) {
+    return (
+      <Grid
+        container
+        sx={{
+          backgroundColor: "#eee",
+          height: "100vh",
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Loader />
+      </Grid>
+    );
+  }
+
   return (
-    <div className="App" style={{ backgroundColor: "#eee" }}>
+    <Grid
+      container
+      className="App"
+      sx={{
+        backgroundColor: "#eee",
+        height: "100%",
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
       <Header
         setShowDialog={setShowDialog}
         setSelectedPatient={setSelectedPatient}
       />
-      {data ? (
-        <>
-          <Accordion
-            data={data}
-            setShowDialog={setShowDialog}
-            setSelectedPatient={setSelectedPatient}
-          />
-          <PatientForm
-            open={showDialog}
-            selectedPatient={selectedPatient}
-            handleClose={() => {
-              setSelectedPatient(undefined);
-              handleDialog();
-            }}
-            handleSave={setData}
-          />
-        </>
-      ) : (
-        <div
-          style={{
-            margin: "auto",
-            padding: "100px",
-            height: "100vh",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <Typography>Loading....</Typography>
-        </div>
-      )}
-    </div>
+      <PatientList
+        data={data}
+        setShowDialog={setShowDialog}
+        setSelectedPatient={setSelectedPatient}
+      />
+      <PatientForm
+        open={showDialog}
+        selectedPatient={selectedPatient}
+        handleClose={() => {
+          setSelectedPatient(undefined);
+          handleDialog();
+        }}
+        handleSave={setData}
+      />
+    </Grid>
   );
 }
 

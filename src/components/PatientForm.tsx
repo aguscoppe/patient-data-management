@@ -1,4 +1,4 @@
-import Dialog from "./Dialog";
+import Dialog from "./common/Dialog/Dialog";
 import { TextField } from "@mui/material";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Patient } from "../App";
