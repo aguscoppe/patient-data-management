@@ -11,7 +11,7 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import EditIcon from "@mui/icons-material/Edit";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
-import { Patient } from "../App";
+import { Patient } from "../../models/patient";
 import { Dispatch, SetStateAction } from "react";
 
 type Props = {

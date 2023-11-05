@@ -1,5 +1,5 @@
-import PatientItem from "./PatientItem";
-import { Patient } from "../App";
+import PatientItem from "../PatientItem/PatientItem";
+import { Patient } from "../../models/patient";
 import { Dispatch, SetStateAction } from "react";
 import { Grid } from "@mui/material";
 

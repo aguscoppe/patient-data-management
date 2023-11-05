@@ -2,7 +2,7 @@ import { AppBar, Box, Toolbar, Typography, Button, IconButton } from "@mui/mater
 import SpaceDashboardIcon from "@mui/icons-material/SpaceDashboard";
 import AddIcon from "@mui/icons-material/Add";
 import { Dispatch, SetStateAction } from "react";
-import { Patient } from "../App";
+import { Patient } from "../../models/patient";
 
 type Props = {
   setShowDialog: Dispatch<SetStateAction<boolean>>;

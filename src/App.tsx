@@ -1,33 +1,13 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
-import PatientList from "./components/PatientList";
-import Header from "./components/Header";
-import PatientForm from "./components/PatientForm";
+import PatientList from "./components/PatientList/PatientList";
+import Header from "./components/Header/Header";
+import PatientForm from "./components/PatientForm/PatientForm";
 import { Grid, Snackbar } from "@mui/material";
 import Loader from "./components/common/Loader/Loader";
 import Alert from "./components/common/Alert/Alert";
-
-export type Patient = {
-  avatar: string;
-  createdAt: string;
-  description: string;
-  id: string;
-  name: string;
-  website: string;
-};
-
-export type Notification = {
-  show: boolean;
-  severity: "error" | "info" | "success" | "warning";
-  message: string;
-};
-
-export enum NotificationMessage {
-  NewUserSuccess = "New patient has been added",
-  EditedUserSuccess = "Patient data has been updated",
-  NewUserError = "New patient creation has failed",
-  EditedUserError = "Patient data saving has failed",
-}
+import { Notification } from "./models/notification";
+import { Patient } from "./models/patient";
 
 function App() {
   const [data, setData] = useState<Patient[] | undefined>(undefined);

@@ -1,8 +1,17 @@
-import Dialog from "./common/Dialog/Dialog";
+import Dialog from "../common/Dialog/Dialog";
 import { TextField } from "@mui/material";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { Patient, Notification, NotificationMessage } from "../App";
 import { v4 as uuidv4 } from "uuid";
+import {
+  initialPatientState,
+  initialErrorState,
+  PatientFormField,
+  FieldError,
+  NotificationMessage,
+} from "./PatientForm.constants";
+import { isValidLink } from "./PatientForm.utils";
+import { Patient } from "../../models/patient";
+import { Notification } from "../../models/notification";
 
 type Props = {
   open: boolean;
@@ -10,41 +19,6 @@ type Props = {
   handleClose: () => void;
   handleSave: Dispatch<SetStateAction<Patient[] | undefined>>;
   handleNotification: Dispatch<SetStateAction<Notification>>;
-};
-
-enum PatientFormField {
-  Name = "name",
-  Description = "description",
-  Avatar = "avatar",
-  Website = "website",
-}
-
-enum FieldError {
-  Empty = "This field cannot be left empty",
-  InvalidLink = "The provided link is not valid",
-}
-
-const initialPatientState = {
-  name: "",
-  description: "",
-  website: "",
-  avatar: "",
-  createdAt: new Date().toISOString(),
-  id: "",
-};
-
-const initialErrorState = {
-  [PatientFormField.Name]: "",
-  [PatientFormField.Description]: "",
-  [PatientFormField.Avatar]: "",
-  [PatientFormField.Website]: "",
-};
-
-const isValidLink = (str: string) => {
-  const res = str.match(
-    /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g,
-  );
-  return res !== null;
 };
 
 const PatientForm = ({
