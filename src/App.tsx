@@ -3,8 +3,9 @@ import Axios from "axios";
 import PatientList from "./components/PatientList";
 import Header from "./components/Header";
 import PatientForm from "./components/PatientForm";
-import { Grid } from "@mui/material";
+import { Grid, Snackbar } from "@mui/material";
 import Loader from "./components/common/Loader/Loader";
+import Alert from "./components/common/Alert/Alert";
 
 export type Patient = {
   avatar: string;
@@ -15,12 +16,30 @@ export type Patient = {
   website: string;
 };
 
+export type Notification = {
+  show: boolean;
+  severity: "error" | "info" | "success" | "warning";
+  message: string;
+};
+
+export enum NotificationMessage {
+  NewUserSuccess = "New patient has been added",
+  EditedUserSuccess = "Patient data has been updated",
+  NewUserError = "New patient creation has failed",
+  EditedUserError = "Patient data saving has failed",
+}
+
 function App() {
   const [data, setData] = useState<Patient[] | undefined>(undefined);
   const [selectedPatient, setSelectedPatient] = useState<Patient | undefined>(
     undefined,
   );
-  const [showDialog, setShowDialog] = useState(false);
+  const [showDialog, setShowDialog] = useState<boolean>(false);
+  const [notification, setNotification] = useState<Notification>({
+    show: false,
+    severity: "success",
+    message: "",
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,6 +56,9 @@ function App() {
   }, [setData]);
 
   const handleDialog = () => setShowDialog((prev) => !prev);
+
+  const handleCloseNotification = () =>
+    setNotification((prev) => ({ ...prev, show: false }));
 
   if (!data) {
     return (
@@ -86,8 +108,22 @@ function App() {
           setSelectedPatient(undefined);
           handleDialog();
         }}
+        handleNotification={setNotification}
         handleSave={setData}
       />
+      <Snackbar
+        open={notification.show}
+        autoHideDuration={6000}
+        onClose={handleCloseNotification}
+      >
+        <Alert
+          onClose={handleCloseNotification}
+          severity={notification.severity}
+          sx={{ width: "100%" }}
+        >
+          {notification.message}
+        </Alert>
+      </Snackbar>
     </Grid>
   );
 }

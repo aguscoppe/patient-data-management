@@ -1,7 +1,7 @@
 import Dialog from "./common/Dialog/Dialog";
 import { TextField } from "@mui/material";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { Patient } from "../App";
+import { Patient, Notification, NotificationMessage } from "../App";
 import { v4 as uuidv4 } from "uuid";
 
 type Props = {
@@ -9,6 +9,7 @@ type Props = {
   selectedPatient?: Patient;
   handleClose: () => void;
   handleSave: Dispatch<SetStateAction<Patient[] | undefined>>;
+  handleNotification: Dispatch<SetStateAction<Notification>>;
 };
 
 enum PatientFormField {
@@ -46,7 +47,13 @@ const isValidLink = (str: string) => {
   return res !== null;
 };
 
-const PatientForm = ({ open, selectedPatient, handleSave, handleClose }: Props) => {
+const PatientForm = ({
+  open,
+  selectedPatient,
+  handleSave,
+  handleClose,
+  handleNotification,
+}: Props) => {
   const [patient, setPatient] = useState<Patient>({
     ...initialPatientState,
     id: uuidv4(),
@@ -118,7 +125,22 @@ const PatientForm = ({ open, selectedPatient, handleSave, handleClose }: Props) 
         }
         return [{ ...patient }, ...(prev as Patient[])];
       });
+      handleNotification({
+        show: true,
+        severity: "success",
+        message: selectedPatient
+          ? NotificationMessage.EditedUserSuccess
+          : NotificationMessage.NewUserSuccess,
+      });
       handleResetDialog();
+    } else {
+      handleNotification({
+        show: true,
+        severity: "error",
+        message: selectedPatient
+          ? NotificationMessage.EditedUserError
+          : NotificationMessage.NewUserError,
+      });
     }
   };
 
