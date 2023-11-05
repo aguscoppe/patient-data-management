@@ -65,6 +65,9 @@ function App() {
           style={{
             margin: "auto",
             padding: "100px",
+            height: "100vh",
+            display: "flex",
+            justifyContent: "center",
           }}
         >
           <Typography>Loading....</Typography>

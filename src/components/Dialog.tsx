@@ -14,6 +14,7 @@ type Props = {
   title: string;
   children: ReactNode;
   actionText: string;
+  disableAction?: boolean;
   handleAction: () => void;
   handleClose: () => void;
 };
@@ -23,6 +24,7 @@ const Dialog = ({
   title,
   children,
   actionText,
+  disableAction = false,
   handleAction,
   handleClose,
 }: Props) => {
@@ -45,7 +47,12 @@ const Dialog = ({
       </IconButton>
       <DialogContent dividers>{children}</DialogContent>
       <DialogActions>
-        <Button autoFocus variant="contained" onClick={handleAction}>
+        <Button
+          autoFocus
+          variant="contained"
+          disabled={disableAction}
+          onClick={handleAction}
+        >
           {actionText}
         </Button>
       </DialogActions>
