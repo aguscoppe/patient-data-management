@@ -2,7 +2,7 @@
 ![Logo](https://i.ibb.co/dW6q6nW/Captura-de-pantalla-2023-11-05-210553.png)
 
 
-# Patients Management
+# Patients Manager
 
 Frontend application that enables users to manage patient data.
 
