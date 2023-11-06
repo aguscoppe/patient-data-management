@@ -4,7 +4,7 @@
 
 # Patients Management
 
-The objective of this challenge is to create a frontend application that enables users to manage patient data. The application should have the following features:
+Frontend application that enables users to manage patient data.
 
 
 ## Features
@@ -16,16 +16,18 @@ The objective of this challenge is to create a frontend application that enables
 - Implement form validation to ensure the accuracy and completeness of patient data.
 - Optional: Provide user-friendly notifications for successful or failed data modifications.
 - Optional: Ensure that the application is interactive and responsive, with smooth animations where necessary.
+
 ## Tech Stack
+- [React](https://react.dev/learn/installation)
+- [TypeScript](https://www.typescriptlang.org/docs/)
 
-**Client:** React, TypeScript
 ## Libraries
-
 - [Material UI](https://mui.com/material-ui/getting-started/installation/)
 - [Axios](https://axios-http.com/docs/intro)
 - [UUID](https://www.npmjs.com/package/uuid)
 - [ESLint](https://eslint.org/docs/latest/use/getting-started)
 - [Prettier](https://prettier.io/docs/en/install)
+
 ## Run Locally
 
 Clone the project
