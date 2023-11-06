@@ -1,46 +1,69 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Logo](https://i.ibb.co/dW6q6nW/Captura-de-pantalla-2023-11-05-210553.png)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Authors
 
-### `npm start`
+- [@aguscoppe](https://www.github.com/aguscoppe)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Patients Management
 
-### `npm test`
+The objective of this challenge is to create a frontend application that enables users to manage patient data. The application should have the following features:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Features
+- Retrieve a list of patient records from a this [API](https://63bedcf7f5cfc0949b634fc8.mockapi.io/users).
+- Display the patient records individually in cards within a user interface.
+- Each patient card should include a button or icon that allows users to view additional details (expand/collapse).
+- Implement a modal or a similar component to edit and add patient information.
+- Users should have the ability to edit existing patient data and add new patients to the list.  This has no persistent data.
+- Implement form validation to ensure the accuracy and completeness of patient data.
+- Optional: Provide user-friendly notifications for successful or failed data modifications.
+- Optional: Ensure that the application is interactive and responsive, with smooth animations where necessary.
+## Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Client:** React, TypeScript
+## Libraries
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [Material UI](https://mui.com/material-ui/getting-started/installation/)
+- [Axios](https://axios-http.com/docs/intro)
+- [UUID](https://www.npmjs.com/package/uuid)
+- [ESLint](https://eslint.org/docs/latest/use/getting-started)
+- [Prettier](https://prettier.io/docs/en/install)
+## Run Locally
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Clone the project
 
-### `npm run eject`
+```bash
+  git clone https://github.com/aguscoppe/patient-data-management
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Go to the project directory
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+  cd patient-data-management
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Install dependencies
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+  npm install
+```
 
-## Learn More
+Start the server
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Screenshots
+
+![Screenshot 1](https://i.ibb.co/HTXhwDn/Captura-de-pantalla-2023-11-05-210833.png)
+
+![Screenshot 2](https://i.ibb.co/fpYfr6J/Captura-de-pantalla-2023-11-05-210900.png)
+
+![Screenshot 3](https://i.ibb.co/dLh2Hmn/Captura-de-pantalla-2023-11-05-210939.png)
+
+![Screenshot 4](https://i.ibb.co/GJHMDV4/Captura-de-pantalla-2023-11-05-210954.png)
