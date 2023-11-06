@@ -8,14 +8,12 @@ Frontend application that enables users to manage patient data.
 
 
 ## Features
-- Retrieve a list of patient records from a this [API](https://63bedcf7f5cfc0949b634fc8.mockapi.io/users).
-- Display the patient records individually in cards within a user interface.
-- Each patient card should include a button or icon that allows users to view additional details (expand/collapse).
-- Implement a modal or a similar component to edit and add patient information.
-- Users should have the ability to edit existing patient data and add new patients to the list.  This has no persistent data.
-- Implement form validation to ensure the accuracy and completeness of patient data.
-- Optional: Provide user-friendly notifications for successful or failed data modifications.
-- Optional: Ensure that the application is interactive and responsive, with smooth animations where necessary.
+- Displays a list of patient records from a this [API](https://63bedcf7f5cfc0949b634fc8.mockapi.io/users) in cards within a user interface.
+- User is able to view additional details from each patient.
+- User is able to edit patient information and add new patients to the list (data will not persist).
+- Form validation is implemented to ensure the accuracy and completeness of patient data.
+- Notifications show up for successful or failed data modifications.
+- Application is interactive and responsive.
 
 ## Tech Stack
 - [React](https://react.dev/learn/installation)
