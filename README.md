@@ -2,11 +2,6 @@
 ![Logo](https://i.ibb.co/dW6q6nW/Captura-de-pantalla-2023-11-05-210553.png)
 
 
-## Authors
-
-- [@aguscoppe](https://www.github.com/aguscoppe)
-
-
 # Patients Management
 
 The objective of this challenge is to create a frontend application that enables users to manage patient data. The application should have the following features:
@@ -67,3 +62,7 @@ Start the server
 ![Screenshot 3](https://i.ibb.co/dLh2Hmn/Captura-de-pantalla-2023-11-05-210939.png)
 
 ![Screenshot 4](https://i.ibb.co/GJHMDV4/Captura-de-pantalla-2023-11-05-210954.png)
+## Authors
+
+- [@aguscoppe](https://www.github.com/aguscoppe)
+
