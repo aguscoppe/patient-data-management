@@ -21,7 +21,7 @@ Frontend application that enables users to manage patient data.
 - [React](https://react.dev/learn/installation)
 - [TypeScript](https://www.typescriptlang.org/docs/)
 
-## Libraries
+## Dependencies
 - [Material UI](https://mui.com/material-ui/getting-started/installation/)
 - [Axios](https://axios-http.com/docs/intro)
 - [UUID](https://www.npmjs.com/package/uuid)
