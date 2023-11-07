@@ -1,4 +1,4 @@
-![Logo](https://i.ibb.co/dW6q6nW/Captura-de-pantalla-2023-11-05-210553.png)
+![Logo](https://i.ibb.co/0GVj9vL/Captura-de-pantalla-2023-11-06-214237.png)
 
 # Patient Manager
 
