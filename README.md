@@ -26,6 +26,19 @@ Frontend application that enables users to manage patient data.
 - [ESLint](https://eslint.org/docs/latest/use/getting-started)
 - [Prettier](https://prettier.io/docs/en/install)
 
+## Project structure
+
+Folders:
+- components: 
+  - this is where components are placed
+  - if generic, they should be placed in /common sub-folder
+  - if a component has a related styles, utils or constants file, they will follow the structure:
+    - ComponentName.styles.ts
+    - ComponentName.constants.ts
+    - ComponentName.utils.ts
+- hooks: this is where custom hooks are placed
+- models: this is where data models are placed
+
 ## Run Locally
 
 Clone the project
