@@ -1,8 +1,10 @@
 import { AppBar, Box, Toolbar, Typography, Button, IconButton } from "@mui/material";
 import SpaceDashboardIcon from "@mui/icons-material/SpaceDashboard";
-import AddIcon from "@mui/icons-material/Add";
+
 import { Dispatch, SetStateAction } from "react";
 import { Patient } from "../../models/patient";
+import useScreenSize from "../../hooks/useScreenSize";
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
 
 type Props = {
   setShowDialog: Dispatch<SetStateAction<boolean>>;
@@ -10,7 +12,23 @@ type Props = {
 };
 
 function Header({ setShowDialog, setSelectedPatient }: Props) {
+  const { isScreenSizeSmall } = useScreenSize();
   const handleOpenDialog = () => setShowDialog(true);
+
+  const buttonProps = {
+    sx: {
+      backgroundColor: "white",
+      color: "black",
+      ":hover": {
+        backgroundColor: "#eee",
+      },
+    },
+    onClick: () => {
+      setSelectedPatient(undefined);
+      handleOpenDialog();
+    },
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
@@ -24,26 +42,22 @@ function Header({ setShowDialog, setSelectedPatient }: Props) {
           >
             <SpaceDashboardIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Patients Manager
-          </Typography>
-          <Button
-            variant="contained"
-            startIcon={<AddIcon />}
-            onClick={() => {
-              setSelectedPatient(undefined);
-              handleOpenDialog();
-            }}
-            sx={{
-              backgroundColor: "white",
-              color: "black",
-              ":hover": {
-                backgroundColor: "#eee",
-              },
-            }}
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, fontSize: isScreenSizeSmall ? "1rem" : "1.2rem" }}
           >
-            New Patient
-          </Button>
+            Patient Manager
+          </Typography>
+          {isScreenSizeSmall ? (
+            <IconButton {...buttonProps}>
+              <PersonAddIcon />
+            </IconButton>
+          ) : (
+            <Button variant="contained" endIcon={<PersonAddIcon />} {...buttonProps}>
+              New Patient
+            </Button>
+          )}
         </Toolbar>
       </AppBar>
     </Box>

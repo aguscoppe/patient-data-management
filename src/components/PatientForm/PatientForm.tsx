@@ -12,6 +12,7 @@ import {
 import { isValidLink } from "./PatientForm.utils";
 import { Patient } from "../../models/patient";
 import { Notification } from "../../models/notification";
+import useScreenSize from "../../hooks/useScreenSize";
 
 type Props = {
   open: boolean;
@@ -28,6 +29,7 @@ const PatientForm = ({
   handleClose,
   handleNotification,
 }: Props) => {
+  const { isScreenSizeSmall } = useScreenSize();
   const [patient, setPatient] = useState<Patient>({
     ...initialPatientState,
     id: uuidv4(),
@@ -118,6 +120,21 @@ const PatientForm = ({
     }
   };
 
+  const textFieldProps = {
+    fullWidth: true,
+    required: true,
+    sx: {
+      marginBottom: 2,
+      "& .MuiFormLabel-root": {
+        fontSize: "0.85rem",
+      },
+      "& .MuiInputBase-root": {
+        fontSize: "0.85rem",
+      },
+    },
+    onChange: handleChange,
+  };
+
   return (
     <Dialog
       open={open}
@@ -127,54 +144,47 @@ const PatientForm = ({
       handleAction={handleSubmit}
     >
       <TextField
+        {...textFieldProps}
         variant="filled"
         label="Name"
-        fullWidth
-        required
-        sx={{ marginBottom: 2 }}
         name={PatientFormField.Name}
         value={name}
-        onChange={handleChange}
         helperText={errors[PatientFormField.Name]}
         error={errors[PatientFormField.Name] !== ""}
+        size={isScreenSizeSmall ? "small" : "medium"}
       />
       <TextField
+        {...textFieldProps}
         variant="filled"
         label="Description"
-        fullWidth
-        required
         multiline
         maxRows={4}
-        sx={{ marginBottom: 2 }}
         name={PatientFormField.Description}
         value={description}
-        onChange={handleChange}
         helperText={errors[PatientFormField.Description]}
         error={errors[PatientFormField.Description] !== ""}
+        size={isScreenSizeSmall ? "small" : "medium"}
       />
       <TextField
+        {...textFieldProps}
         variant="filled"
         label="Website"
-        fullWidth
-        required
-        sx={{ marginBottom: 2 }}
         name={PatientFormField.Website}
         value={website}
-        onChange={handleChange}
         helperText={errors[PatientFormField.Website]}
         error={errors[PatientFormField.Website] !== ""}
+        size={isScreenSizeSmall ? "small" : "medium"}
       />
       <TextField
+        {...textFieldProps}
         label="Avatar"
         variant="filled"
-        fullWidth
-        required
-        sx={{ marginBottom: 2 }}
         name={PatientFormField.Avatar}
         value={avatar}
-        onChange={handleChange}
         helperText={errors[PatientFormField.Avatar]}
         error={errors[PatientFormField.Avatar] !== ""}
+        size={isScreenSizeSmall ? "small" : "medium"}
+        sx={{ ...textFieldProps.sx, marginBottom: 0 }}
       />
     </Dialog>
   );
