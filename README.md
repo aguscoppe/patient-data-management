@@ -28,7 +28,6 @@ Frontend application that enables users to manage patient data.
 
 ## Project structure
 
-Folders:
 - /components
   - this is where components are placed
   - if generic, they will be placed in /common sub-folder
