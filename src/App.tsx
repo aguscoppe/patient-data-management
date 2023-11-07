@@ -9,6 +9,14 @@ import Alert from "./components/common/Alert/Alert";
 import { Notification } from "./models/notification";
 import { Patient } from "./models/patient";
 
+const containerStyle = {
+  backgroundColor: "#eee",
+  width: "100%",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+};
+
 function App() {
   const [data, setData] = useState<Patient[] | undefined>(undefined);
   const [selectedPatient, setSelectedPatient] = useState<Patient | undefined>(
@@ -45,12 +53,8 @@ function App() {
       <Grid
         container
         sx={{
-          backgroundColor: "#eee",
+          ...containerStyle,
           height: "100vh",
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
           justifyContent: "center",
         }}
       >
@@ -64,12 +68,8 @@ function App() {
       container
       className="App"
       sx={{
-        backgroundColor: "#eee",
+        ...containerStyle,
         height: "100%",
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
       }}
     >
       <Header
@@ -96,11 +96,7 @@ function App() {
         autoHideDuration={6000}
         onClose={handleCloseNotification}
       >
-        <Alert
-          onClose={handleCloseNotification}
-          severity={notification.severity}
-          sx={{ width: "100%" }}
-        >
+        <Alert onClose={handleCloseNotification} severity={notification.severity}>
           {notification.message}
         </Alert>
       </Snackbar>

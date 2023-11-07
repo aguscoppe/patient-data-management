@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { ReactNode } from "react";
 import CloseIcon from "@mui/icons-material/Close";
+import useScreenSize from "../../../hooks/useScreenSize";
 
 type Props = {
   open: boolean;
@@ -28,9 +29,13 @@ const Dialog = ({
   handleAction,
   handleClose,
 }: Props) => {
+  const { isScreenSizeSmall } = useScreenSize();
   return (
     <MuiDialog open={open}>
-      <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
+      <DialogTitle
+        id="customized-dialog-title"
+        sx={{ m: 0, p: 2, fontSize: isScreenSizeSmall ? "1rem" : "1.1rem" }}
+      >
         {title}
       </DialogTitle>
       <IconButton
@@ -43,15 +48,23 @@ const Dialog = ({
           color: (theme) => theme.palette.grey[500],
         }}
       >
-        <CloseIcon />
+        <CloseIcon
+          sx={{
+            width: isScreenSizeSmall ? "14px" : "18px",
+            height: isScreenSizeSmall ? "14px" : "18px",
+          }}
+        />
       </IconButton>
-      <DialogContent dividers>{children}</DialogContent>
+      <DialogContent dividers sx={{ padding: isScreenSizeSmall ? "12px" : "20px" }}>
+        {children}
+      </DialogContent>
       <DialogActions>
         <Button
           autoFocus
           variant="contained"
           disabled={disableAction}
           onClick={handleAction}
+          size={isScreenSizeSmall ? "small" : "medium"}
         >
           {actionText}
         </Button>

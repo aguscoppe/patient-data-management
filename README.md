@@ -1,13 +1,11 @@
-
 ![Logo](https://i.ibb.co/dW6q6nW/Captura-de-pantalla-2023-11-05-210553.png)
 
-
-# Patients Manager
+# Patient Manager
 
 Frontend application that enables users to manage patient data.
 
-
 ## Features
+
 - Displays a list of patient records from a this [API](https://63bedcf7f5cfc0949b634fc8.mockapi.io/users) in cards within a user interface.
 - User is able to view additional details from each patient.
 - User is able to edit patient information and add new patients to the list (data will not persist).
@@ -16,10 +14,12 @@ Frontend application that enables users to manage patient data.
 - Application is interactive and responsive.
 
 ## Tech Stack
+
 - [React](https://react.dev/learn/installation)
 - [TypeScript](https://www.typescriptlang.org/docs/)
 
 ## Dependencies
+
 - [Material UI](https://mui.com/material-ui/getting-started/installation/)
 - [Axios](https://axios-http.com/docs/intro)
 - [UUID](https://www.npmjs.com/package/uuid)
@@ -52,17 +52,24 @@ Start the server
   npm start
 ```
 
-
 ## Screenshots
 
-![Screenshot 1](https://i.ibb.co/HTXhwDn/Captura-de-pantalla-2023-11-05-210833.png)
+Desktop
 
-![Screenshot 2](https://i.ibb.co/fpYfr6J/Captura-de-pantalla-2023-11-05-210900.png)
+![Screenshot 1](https://i.ibb.co/k3Qf9c3/Captura-de-pantalla-2023-11-06-214147.png)
 
-![Screenshot 3](https://i.ibb.co/dLh2Hmn/Captura-de-pantalla-2023-11-05-210939.png)
+![Screenshot 2](https://i.ibb.co/4g9X6hy/Captura-de-pantalla-2023-11-06-214206.png)
 
-![Screenshot 4](https://i.ibb.co/GJHMDV4/Captura-de-pantalla-2023-11-05-210954.png)
+Mobile
+
+![Screenshot 1](https://i.ibb.co/3zBmrXz/Captura-de-pantalla-2023-11-06-214302.png)
+
+![Screenshot 2](https://i.ibb.co/B3mFDQg/Captura-de-pantalla-2023-11-06-214313.png)
+
+![Screenshot 3](https://i.ibb.co/R0GZQSS/Captura-de-pantalla-2023-11-06-214322.png)
+
+![Screenshot 4](https://i.ibb.co/svL1BSm/Captura-de-pantalla-2023-11-06-214455.png)
+
 ## Authors
 
 - [@aguscoppe](https://www.github.com/aguscoppe)
-
