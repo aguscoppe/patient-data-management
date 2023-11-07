@@ -31,7 +31,7 @@ Frontend application that enables users to manage patient data.
 Folders:
 - /components
   - this is where components are placed
-  - if generic, they should be placed in /common sub-folder
+  - if generic, they will be placed in /common sub-folder
   - if a component has a related styles, utils or constants file, they will follow the structure:
     - ComponentName.styles.ts
     - ComponentName.constants.ts
